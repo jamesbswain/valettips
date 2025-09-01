@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tip the Valet Team</title>
+  <meta name="description" content="Cashless tipping for the valet team. 100% goes to staff. Secure checkout by Stripe." />
+  <style>
+    :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#94a3b8; --accent:#22c55e; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#0f172a,#0b1220); color:var(--text);}
+    .container{max-width:680px; margin:0 auto; padding:24px;}
+    .card{background:rgba(17,24,39,0.7); backdrop-filter: blur(8px); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:28px; box-shadow:0 8px 30px rgba(0,0,0,0.35);}
+    h1{font-size:clamp(28px,4vw,40px); margin:0 0 8px;}
+    p{margin:0 0 16px; color:var(--muted); line-height:1.6}
+    .badges{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 4px}
+    .badge{border:1px solid rgba(255,255,255,0.12); border-radius:999px; padding:6px 10px; font-size:12px; color:#cbd5e1}
+    .buttons{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:18px 0}
+    a.button{display:inline-block; text-align:center; text-decoration:none; background:var(--accent); color:#052e16; font-weight:700; border:none; border-radius:12px; padding:14px 16px; font-size:16px; cursor:pointer; transition:.2s transform, .2s opacity;}
+    a.button:hover{transform:translateY(-1px)}
+    a.button.secondary{background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.16)}
+    small{color:#94a3b8}
+    details{margin-top:10px}
+    footer{margin-top:16px; text-align:center; font-size:12px; color:#94a3b8}
+    .logo{display:flex; align-items:center; gap:12px; margin-bottom:8px}
+    .logo img{height:36px; width:auto}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="logo">
+        <img src="https://dummyimage.com/72x36/ffffff/000000&text=Logo" alt="Hotel Logo" />
+        <strong>Valet Team</strong>
+      </div>
+      <h1>Tip the Valet Team</h1>
+      <p>Thank you for your visit. This page lets you leave a cashless tip for the on-duty valet team. <strong>100% of your tip goes to staff.</strong></p>
+
+      <div class="badges">
+        <span class="badge">Secure checkout by Stripe</span>
+        <span class="badge">Apple/Google Pay supported</span>
+        <span class="badge">Receipts available</span>
+      </div>
+
+      <div class="buttons">
+        <!-- All buttons go to the same Payment Link; the amount is chosen on the Stripe page -->
+        <a class="button" href="https://buy.stripe.com/cNidR9an2eg8d4W33abEA00" target="_blank" rel="noopener" aria-label="Tip now $5">$5 Tip</a>
+        <a class="button" href="https://buy.stripe.com/cNidR9an2eg8d4W33abEA00" target="_blank" rel="noopener" aria-label="Tip now $10">$10 Tip</a>
+        <a class="button" href="https://buy.stripe.com/cNidR9an2eg8d4W33abEA00" target="_blank" rel="noopener" aria-label="Tip now $20">$20 Tip</a>
+        <a class="button secondary" href="https://buy.stripe.com/cNidR9an2eg8d4W33abEA00" target="_blank" rel="noopener" aria-label="Tip a custom amount">Other Amount</a>
+      </div>
+
+      <small>Tips are pooled and distributed to the on-duty team per hotel policy. This is a voluntary gratuity, not a service charge.</small>
+
+      <details>
+        <summary style="cursor:pointer; margin-top:8px; color:#cbd5e1;">Questions</summary>
+        <p><strong>How is my tip used?</strong> Tips are pooled for the active shift and split among on-duty valets.</p>
+        <p><strong>Is this secure?</strong> Checkout is processed by Stripe. We never see your card details.</p>
+      </details>
+
+      <footer>© <span id="year"></span> TipPool • All rights reserved.</footer>
+    </div>
+  </div>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
